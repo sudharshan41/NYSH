@@ -9,22 +9,20 @@ export function CoinLogo() {
       <div className="coin">
         <div className="coin-face coin-front">
           <Image
-            src="https://placehold.co/142x142.png"
-            alt="Nethaji Yuva Sene Holur Logo"
+            src="/logo.png"
+            alt="ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು Logo"
             width={142}
             height={142}
             className="rounded-full"
-            data-ai-hint="logo"
           />
         </div>
         <div className="coin-face coin-back">
           <Image
-            src="https://placehold.co/142x142.png"
-            alt="Nethaji Yuva Sene Holur Logo"
+            src="/logo.png"
+            alt="ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು Logo"
             width={142}
             height={142}
             className="rounded-full"
-            data-ai-hint="logo"
           />
         </div>
       </div>
