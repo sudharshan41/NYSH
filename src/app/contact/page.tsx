@@ -23,9 +23,9 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-headline font-semibold mb-4">Connect with Us</h2>
             <div className="space-y-4">
-              <a href="mailto:info@communityhub.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:info@netajiyuvaseneholur.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Mail className="w-5 h-5 text-accent" />
-                <span>info@communityhub.com</span>
+                <span>info@netajiyuvaseneholur.com</span>
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Phone className="w-5 h-5 text-accent" />
@@ -33,7 +33,7 @@ export default function ContactPage() {
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5 text-accent" />
-                <span>@CommunityHub</span>
+                <span>@NetajiYuvaSeneHolur</span>
               </a>
             </div>
           </div>

@@ -11,7 +11,7 @@ export function CoinLogo() {
           <Users className="h-24 w-24 sm:h-32 sm:w-32 text-primary" />
         </div>
         <div className="coin-face coin-back">
-          <span className="font-headline text-5xl sm:text-6xl font-bold text-primary">CH</span>
+          <span className="font-headline text-5xl sm:text-6xl font-bold text-primary">NYS</span>
         </div>
       </div>
     </div>

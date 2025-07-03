@@ -6,7 +6,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold font-headline tracking-tight">
-          About Our Community
+          About ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Discover our story, our mission, and the values that bring us together.

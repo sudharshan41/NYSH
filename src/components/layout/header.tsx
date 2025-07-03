@@ -44,7 +44,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Users className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline text-lg">Community Hub</span>
+          <span className="font-bold font-headline text-lg">ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end space-x-2 md:flex">
           <nav className="flex items-center space-x-2">

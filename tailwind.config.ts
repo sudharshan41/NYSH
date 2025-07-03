@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"PT Sans"', 'sans-serif'],
-        headline: ['"Playfair Display"', 'serif'],
+        body: ['"PT Sans"', '"Noto Sans Kannada"', 'sans-serif'],
+        headline: ['"Playfair Display"', '"Noto Sans Kannada"', 'serif'],
         code: ['monospace'],
       },
       colors: {
