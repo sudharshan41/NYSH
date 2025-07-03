@@ -10,7 +10,7 @@ export function Footer() {
         </p>
         <Button asChild size="sm" variant="outline">
           <Link href="https://sudharshan18.netlify.app/" target="_blank" rel="noopener noreferrer">
-            Connect with the Developer
+            Connect with GBB
           </Link>
         </Button>
       </div>
