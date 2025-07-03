@@ -4,13 +4,6 @@
   perspective: 1000px;
 }
 
-@media (min-width: 640px) {
-  .coin-container {
-    width: 200px;
-    height: 200px;
-  }
-}
-
 .coin {
   width: 100%;
   height: 100%;

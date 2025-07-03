@@ -1,6 +1,6 @@
 "use client";
 
-import { Users } from 'lucide-react';
+import Image from 'next/image';
 import './coin-logo.css';
 
 export function CoinLogo() {
@@ -8,10 +8,22 @@ export function CoinLogo() {
     <div className="coin-container">
       <div className="coin">
         <div className="coin-face coin-front">
-          <Users className="h-24 w-24 sm:h-32 sm:w-32 text-primary" />
+          <Image
+            src="/logo.png"
+            alt="Nethaji Yuva Sene Holur Logo"
+            width={142}
+            height={142}
+            className="rounded-full"
+          />
         </div>
         <div className="coin-face coin-back">
-          <span className="font-headline text-5xl sm:text-6xl font-bold text-primary">NYS</span>
+          <Image
+            src="/logo.png"
+            alt="Nethaji Yuva Sene Holur Logo"
+            width={142}
+            height={142}
+            className="rounded-full"
+          />
         </div>
       </div>
     </div>
