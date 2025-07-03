@@ -6,6 +6,9 @@ const galleryData = {
   '2023': Array(6).fill(0),
   '2022': Array(8).fill(0),
   '2021': Array(5).fill(0),
+  '2020': Array(7).fill(0),
+  '2019': Array(4).fill(0),
+  '2018': Array(6).fill(0),
 };
 
 export default function GalleryPage() {
@@ -23,7 +26,7 @@ export default function GalleryPage() {
       </div>
 
       <Tabs defaultValue={years[0]} className="w-full">
-        <TabsList className="grid w-full grid-cols-2 md:w-auto md:mx-auto md:grid-cols-4 mb-8">
+        <TabsList className="grid w-full grid-cols-4 md:w-auto md:mx-auto md:grid-cols-7 mb-8">
           {years.map((year) => (
             <TabsTrigger key={year} value={year}>
               {year}
