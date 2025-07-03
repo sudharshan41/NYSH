@@ -2,12 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Users, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import React from 'react';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -43,7 +44,13 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Users className="h-6 w-6 text-primary" />
+          <Image
+            src="/logo.png"
+            alt="ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full"
+          />
           <span className="font-bold font-headline text-lg">ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end space-x-2 md:flex">
