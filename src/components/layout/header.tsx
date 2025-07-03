@@ -51,7 +51,7 @@ export function Header() {
             height={32}
             className="h-8 w-8 rounded-full"
           />
-          <span className="font-bold font-headline text-lg">ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು</span>
+          <span className="font-bold font-headline">ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end space-x-2 md:flex">
           <nav className="flex items-center space-x-2">
