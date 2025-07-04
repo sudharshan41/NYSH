@@ -56,7 +56,7 @@ export default function ContactPage() {
                     data-ai-hint="map location"
                     />
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                        <p className="text-white text-lg font-medium px-4 text-center">Click on me to view in maps</p>
+                        <p className="text-white text-lg font-medium px-4 text-center">Click here to view in maps</p>
                     </div>
                 </div>
             </a>
