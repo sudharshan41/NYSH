@@ -13,7 +13,7 @@ export function Footer() {
         <p className="text-center text-sm text-muted-foreground">
           &copy; 2025 Sudharshan | GBB Innovations | All Rights Reserved.
         </p>
-        {pathname !== '/' && (
+        {pathname === '/contact' && (
           <Button asChild size="sm" variant="outline">
             <Link href="https://sudharshan18.netlify.app/" target="_blank" rel="noopener noreferrer">
               Connect with GBB
