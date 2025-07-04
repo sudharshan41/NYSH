@@ -1,6 +1,7 @@
-import { Mail, Phone, Instagram } from 'lucide-react';
+import { Phone, Instagram } from 'lucide-react';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact-form';
+import { Button } from '@/components/ui/button';
 
 export default function ContactPage() {
   return (
@@ -22,19 +23,17 @@ export default function ContactPage() {
           </div>
           <div>
             <h2 className="text-2xl font-headline font-semibold mb-4">Connect with Us</h2>
-            <div className="space-y-4">
-              <a href="mailto:nethajiyuvasene@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="w-5 h-5 text-accent" />
-                <span>nethajiyuvasene@gmail.com</span>
-              </a>
-              <a href="tel:+919611886554" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
-                <Phone className="w-5 h-5 text-accent" />
-                <span>+91 9611886554</span>
-              </a>
-              <a href="https://www.instagram.com/nysh__official/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
-                <Instagram className="w-5 h-5 text-accent" />
-                <span>@nysh__official</span>
-              </a>
+            <div className="flex items-center gap-4">
+              <Button asChild variant="outline" size="icon" className="w-12 h-12 rounded-full">
+                <a href="tel:+919611886554" aria-label="Call us">
+                  <Phone className="w-6 h-6 text-accent" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="icon" className="w-12 h-12 rounded-full">
+                <a href="https://www.instagram.com/nysh__official/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
+                  <Instagram className="w-6 h-6 text-accent" />
+                </a>
+              </Button>
             </div>
           </div>
         </div>
