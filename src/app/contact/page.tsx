@@ -46,7 +46,7 @@ export default function ContactPage() {
               Netaji Yuva Sene, Main Road, Holur, Kolar - 563126
             </p>
             <a href="https://maps.app.goo.gl/8gdHnjcVd9BtypUj9" target="_blank" rel="noopener noreferrer" className="group block">
-                <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg transition-shadow group-hover:shadow-xl">
+                <div className="relative aspect-video w-full rounded-lg overflow-hidden shadow-lg transition-shadow group-hover:shadow-xl">
                     <Image
                     src="/map (1).png"
                     alt="Map showing office location in Holur"
@@ -55,6 +55,9 @@ export default function ContactPage() {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                     data-ai-hint="map location"
                     />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                        <p className="text-white text-lg font-medium px-4 text-center">Click on me to view in maps</p>
+                    </div>
                 </div>
             </a>
           </div>
