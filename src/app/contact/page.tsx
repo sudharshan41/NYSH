@@ -31,9 +31,9 @@ export default function ContactPage() {
                 <Phone className="w-5 h-5 text-accent" />
                 <span>+91 9611886554</span>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/nysh__official/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5 text-accent" />
-                <span>@NetajiYuvaSeneHolur</span>
+                <span>@nysh__official</span>
               </a>
             </div>
           </div>
