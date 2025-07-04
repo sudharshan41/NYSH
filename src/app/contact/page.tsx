@@ -1,4 +1,4 @@
-import { Phone, Instagram } from 'lucide-react';
+import { Phone, Instagram, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact-form';
 import { Button } from '@/components/ui/button';
@@ -32,6 +32,11 @@ export default function ContactPage() {
               <Button asChild variant="outline" size="icon" className="w-12 h-12 rounded-full">
                 <a href="https://www.instagram.com/nysh__official/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
                   <Instagram className="w-6 h-6 text-accent" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="icon" className="w-12 h-12 rounded-full">
+                <a href="mailto:nethajiyuvasene@gmail.com" aria-label="Email us">
+                  <Mail className="w-6 h-6 text-accent" />
                 </a>
               </Button>
             </div>
