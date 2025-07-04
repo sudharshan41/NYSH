@@ -27,9 +27,9 @@ export default function ContactPage() {
                 <Mail className="w-5 h-5 text-accent" />
                 <span>info@netajiyuvaseneholur.com</span>
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+919611886554" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Phone className="w-5 h-5 text-accent" />
-                <span>(123) 456-7890</span>
+                <span>+91 9611886554</span>
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5 text-accent" />
