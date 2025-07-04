@@ -46,12 +46,12 @@ export function Header() {
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image
             src="/logo.png"
-            alt="ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು Logo"
+            alt="NYSH Logo"
             width={32}
             height={32}
             className="h-8 w-8 rounded-full"
           />
-          <span className="font-bold font-headline">ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು</span>
+          <span className="font-bold font-headline">NYSH</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end space-x-2 md:flex">
           <nav className="flex items-center space-x-2">

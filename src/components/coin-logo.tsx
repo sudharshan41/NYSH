@@ -10,7 +10,7 @@ export function CoinLogo() {
         <div className="coin-face coin-front">
           <Image
             src="/logo.png"
-            alt="ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು Logo"
+            alt="NYSH Logo"
             width={142}
             height={142}
             className="rounded-full"
@@ -19,7 +19,7 @@ export function CoinLogo() {
         <div className="coin-face coin-back">
           <Image
             src="/logo.png"
-            alt="ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು Logo"
+            alt="NYSH Logo"
             width={142}
             height={142}
             className="rounded-full"
