@@ -43,18 +43,20 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-headline font-semibold mb-4">Our Location</h2>
             <p className="text-muted-foreground mb-4">
-              123 Community Lane, Our City, ST 12345
+              Netaji Yuva Sene, Main Road, Holur, Kolar - 563126
             </p>
-            <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="https://placehold.co/800x450.png"
-                alt="Map showing office location"
-                width={800}
-                height={450}
-                className="w-full h-full object-cover"
-                data-ai-hint="map location"
-              />
-            </div>
+            <a href="https://maps.app.goo.gl/8gdHnjcVd9BtypUj9" target="_blank" rel="noopener noreferrer" className="group block">
+                <div className="aspect-video w-full rounded-lg overflow-hidden shadow-lg transition-shadow group-hover:shadow-xl">
+                    <Image
+                    src="/location.png"
+                    alt="Map showing office location in Holur"
+                    width={800}
+                    height={450}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    data-ai-hint="map location"
+                    />
+                </div>
+            </a>
           </div>
         </div>
       </div>
