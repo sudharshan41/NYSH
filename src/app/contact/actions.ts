@@ -20,6 +20,13 @@ export async function submitContactForm(
   prevState: ContactFormState,
   formData: FormData
 ): Promise<ContactFormState> {
+  if (!process.env.RESEND_API_KEY) {
+    return {
+      message: "Could not send email. The RESEND_API_KEY is not configured.",
+      status: "error",
+    };
+  }
+
   const validatedFields = contactFormSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
@@ -52,6 +59,13 @@ export async function submitContactForm(
 
     if (error) {
       console.error("Resend error:", error);
+      // Provide a more specific error message for common configuration issues
+      if (error.message.includes("verified domain")) {
+         return {
+          message: "Could not send email. The sending domain is not verified in your Resend account.",
+          status: "error",
+        };
+      }
       return {
         message: "Sorry, we couldn't send your message. Please try again later.",
         status: "error",
