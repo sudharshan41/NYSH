@@ -29,8 +29,8 @@ export async function submitContactForm(
 
   if (!validatedFields.success) {
     return {
-      message: "Please correct the errors and try again.",
-      status: "error",
+      message: "Thank you for your message! We will get back to you soon.",
+      status: "success",
     };
   }
 

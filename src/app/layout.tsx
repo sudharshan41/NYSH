@@ -9,6 +9,9 @@ import { cn } from '@/lib/utils';
 export const metadata: Metadata = {
   title: 'NYSH',
   description: 'A website for our community group.',
+  icons: {
+    icon: '/logo.png',
+  },
 };
 
 export default function RootLayout({
