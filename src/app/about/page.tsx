@@ -16,12 +16,11 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
         <div className="rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="https://placehold.co/600x400.png"
+            src="/WhatsApp Image 2025-07-05 at 23.25.39_65625d0c.jpg"
             alt="Community gathering"
             width={600}
             height={400}
             className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-            data-ai-hint="community gathering"
           />
         </div>
         <div>
