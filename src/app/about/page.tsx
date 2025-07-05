@@ -26,7 +26,7 @@ export default function AboutPage() {
         <div>
           <h2 className="text-3xl font-headline font-semibold mb-4">Our History</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Founded in 2010, our community began as a small group of friends with a shared passion. Over the years, we have grown into a vibrant organization, welcoming members from all walks of life. We cherish our history and the journey that has shaped us into the strong, supportive community we are today.
+            Founded in 2018, our journey began as a small group of friends with a shared passion. Over the years, we have grown into a vibrant organization. We cherish our history and the journey that has shaped us into the strong, supportive community we are today.
           </p>
         </div>
       </div>
