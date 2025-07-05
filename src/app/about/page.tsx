@@ -16,7 +16,7 @@ export default function AboutPage() {
       <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
         <div className="rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="/WhatsApp Image 2025-07-05 at 23.25.39_65625d0c.jpg"
+            src="/WhatsApp%20Image%202025-07-05%20at%2023.25.39_65625d0c.jpg"
             alt="Community gathering"
             width={600}
             height={400}
