@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex flex-col items-center text-center">
         <CoinLogo />
         <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-bold mt-8 tracking-tight">
-          Welcome to NYSH
+          Welcome to ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
           Connecting our community, one event at a time. Explore what makes us special and get involved today.
