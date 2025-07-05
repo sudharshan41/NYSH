@@ -11,7 +11,7 @@ export default function ContactPage() {
           Get In Touch
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          We'd love to hear from you! Send us a message, find our office, or connect with us on social media.
+          We'd love to hear from you! Send us a message or connect with us on social media.
         </p>
       </div>
 
