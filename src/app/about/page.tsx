@@ -116,7 +116,7 @@ export default function AboutPage() {
                     if (isNethajiCupFirstImage) {
                       imageSrc = '/s01/1.jpg';
                     } else if (isHPLSeason3) {
-                      imageSrc = `/s01/${index + 2}.jpg`;
+                      imageSrc = `/s01/${index + 1}.jpg`;
                     }
 
                     return (
