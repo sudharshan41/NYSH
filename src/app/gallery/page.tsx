@@ -1,5 +1,14 @@
+"use client";
+
 import Image from 'next/image';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState } from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const galleryData = {
   '2024': Array(9).fill(0),
@@ -11,8 +20,10 @@ const galleryData = {
   '2018': Array(6).fill(0),
 };
 
+const years = Object.keys(galleryData).sort((a, b) => Number(b) - Number(a));
+
 export default function GalleryPage() {
-  const years = Object.keys(galleryData).sort((a, b) => Number(b) - Number(a));
+  const [selectedYear, setSelectedYear] = useState(years[0]);
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -25,33 +36,35 @@ export default function GalleryPage() {
         </p>
       </div>
 
-      <Tabs defaultValue={years[0]} className="w-full">
-        <TabsList className="grid w-full grid-cols-4 md:w-auto md:mx-auto md:grid-cols-7 mb-8">
-          {years.map((year) => (
-            <TabsTrigger key={year} value={year}>
-              {year}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        {years.map((year) => (
-          <TabsContent key={year} value={year}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {galleryData[year as keyof typeof galleryData].map((_, index) => (
-                <div key={`${year}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg shadow-lg">
-                  <Image
-                    src={`https://placehold.co/400x400.png?id=${year}-${index}`}
-                    alt={`Gallery image ${index + 1} from ${year}`}
-                    fill
-                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                    data-ai-hint="community event"
-                  />
-                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-                </div>
-              ))}
-            </div>
-          </TabsContent>
+      <div className="flex justify-center mb-8">
+        <Select value={selectedYear} onValueChange={setSelectedYear}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Select a year" />
+          </SelectTrigger>
+          <SelectContent>
+            {years.map((year) => (
+              <SelectItem key={year} value={year}>
+                {year}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {galleryData[selectedYear as keyof typeof galleryData].map((_, index) => (
+          <div key={`${selectedYear}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg shadow-lg">
+            <Image
+              src={`https://placehold.co/400x400.png?id=${selectedYear}-${index}`}
+              alt={`Gallery image ${index + 1} from ${selectedYear}`}
+              fill
+              className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+              data-ai-hint="community event"
+            />
+             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+          </div>
         ))}
-      </Tabs>
+      </div>
     </div>
   );
 }
