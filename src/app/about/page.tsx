@@ -14,7 +14,7 @@ const seasons = [
     year: '2023',
     title: 'HPL Season 4',
     subtitle: 'Champions',
-    images: Array(7).fill(0),
+    images: Array(4).fill(0),
     hint: 'cricket tournament'
   },
   {
