@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -52,18 +53,24 @@ export default function GalleryPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {galleryData[selectedYear as keyof typeof galleryData].map((_, index) => (
-          <div key={`${selectedYear}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg shadow-lg">
-            <Image
-              src={`https://placehold.co/400x400.png?id=${selectedYear}-${index}`}
-              alt={`Gallery image ${index + 1} from ${selectedYear}`}
-              fill
-              className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-              data-ai-hint="community event"
-            />
-             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-          </div>
-        ))}
+        {galleryData[selectedYear as keyof typeof galleryData].map((_, index) => {
+            const imageSrc = selectedYear === '2024'
+              ? `/2024/${index + 1}.jpg`
+              : `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
+            
+            return (
+              <div key={`${selectedYear}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src={imageSrc}
+                  alt={`Gallery image ${index + 1} from ${selectedYear}`}
+                  fill
+                  className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                  data-ai-hint="community event"
+                />
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+              </div>
+            )
+          })}
       </div>
     </div>
   );
