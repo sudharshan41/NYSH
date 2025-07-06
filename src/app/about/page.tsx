@@ -107,22 +107,29 @@ export default function AboutPage() {
                 className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto"
               >
                 <CarouselContent>
-                  {season.images.map((_, index) => (
-                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                      <div className="p-1">
-                        <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
-                          <Image
-                            src={`https://placehold.co/400x400.png?id=${season.year}-${index}`}
-                            alt={`Season ${season.year} Image ${index + 1}`}
-                            fill
-                            className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
-                            data-ai-hint={season.hint}
-                          />
-                           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
+                  {season.images.map((_, index) => {
+                    const isNethajiCupFirstImage = season.title === 'Nethaji cup S01' && index === 0;
+                    const imageSrc = isNethajiCupFirstImage
+                      ? '/s01/1.jpg'
+                      : `https://placehold.co/400x400.png?id=${season.year}-${index}`;
+
+                    return (
+                      <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                        <div className="p-1">
+                          <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
+                            <Image
+                              src={imageSrc}
+                              alt={`Season ${season.year} Image ${index + 1}`}
+                              fill
+                              className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                              data-ai-hint={season.hint}
+                            />
+                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
+                          </div>
                         </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
+                      </CarouselItem>
+                    );
+                  })}
                 </CarouselContent>
                 <CarouselPrevious className="hidden md:flex left-4" />
                 <CarouselNext className="hidden md:flex right-4" />
