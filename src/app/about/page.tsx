@@ -12,9 +12,10 @@ const seasons = [
   },
   {
     year: '2023',
-    title: 'Season 2023',
+    title: 'HPL Season 4',
+    subtitle: 'Champions',
     images: Array(7).fill(0),
-    hint: 'cricket practice'
+    hint: 'cricket tournament'
   },
   {
     year: '2022',
