@@ -1,5 +1,25 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
+const seasons = [
+  {
+    year: '2024',
+    images: Array(5).fill(0),
+    hint: 'cricket tournament'
+  },
+  {
+    year: '2023',
+    images: Array(7).fill(0),
+    hint: 'cricket practice'
+  },
+  {
+    year: '2022',
+    images: Array(6).fill(0),
+    hint: 'cricket celebration'
+  },
+];
+
 
 export default function AboutPage() {
   return (
@@ -59,20 +79,39 @@ export default function AboutPage() {
       </div>
 
       <div className="text-center mt-16">
-        <h2 className="text-3xl font-headline font-semibold mb-4">NYSH Cricket </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {['Player 1', 'Player 2', 'Player 3', 'Player 4'].map((name) => (
-            <div key={name} className="flex flex-col items-center">
-              <Image
-                src="https://placehold.co/200x200.png"
-                alt={name}
-                width={200}
-                height={200}
-                className="rounded-full mb-4 shadow-md"
-                data-ai-hint="cricket player"
-              />
-              <h3 className="text-lg font-semibold">{name}</h3>
-              <p className="text-sm text-primary">Player</p>
+        <h2 className="text-3xl font-headline font-semibold mb-8">NYSH Cricket: A Season-by-Season Journey</h2>
+        <div className="space-y-16">
+          {seasons.map((season) => (
+            <div key={season.year}>
+              <h3 className="text-2xl font-headline font-semibold mb-6">{`Season ${season.year}`}</h3>
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto"
+              >
+                <CarouselContent>
+                  {season.images.map((_, index) => (
+                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                      <div className="p-1">
+                        <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
+                          <Image
+                            src={`https://placehold.co/400x400.png?id=${season.year}-${index}`}
+                            alt={`Season ${season.year} Image ${index + 1}`}
+                            fill
+                            className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                            data-ai-hint={season.hint}
+                          />
+                           <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
+              </Carousel>
             </div>
           ))}
         </div>
