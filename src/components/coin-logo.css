@@ -2,6 +2,7 @@
   width: 150px;
   height: 150px;
   perspective: 1000px;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
 }
 
 .coin {
@@ -21,29 +22,25 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  background: hsl(var(--card));
 }
 
 .coin-front {
-  background: hsl(var(--card));
-  border: 4px solid hsl(var(--primary));
-  transform: translateZ(2px);
+  border: 6px solid hsl(var(--primary));
+  transform: translateZ(3px);
 }
 
 .dark .coin-front {
-  background: hsl(var(--card));
-  border: 4px solid hsl(var(--accent));
+  border: 6px solid hsl(var(--accent));
 }
 
 .coin-back {
-  background: hsl(var(--card));
-  border: 4px solid hsl(var(--primary));
-  transform: rotateY(180deg) translateZ(2px);
+  border: 6px solid hsl(var(--primary));
+  transform: rotateY(180deg) translateZ(3px);
 }
 
 .dark .coin-back {
-    background: hsl(var(--card));
-    border: 4px solid hsl(var(--accent));
+    border: 6px solid hsl(var(--accent));
 }
 
 @keyframes rotate-coin {
