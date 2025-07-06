@@ -25,7 +25,7 @@ const seasons = [
   },
   {
     year: '2021',
-    title: 'A Year of Growth',
+    title: "Junior's Cup",
     images: Array(5).fill(0),
     hint: 'cricket team'
   },
