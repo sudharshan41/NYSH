@@ -101,6 +101,7 @@ export default function AboutPage() {
                   {season.images.map((_, index) => {
                     const isNethajiCupFirstImage = season.title === 'Nethaji cup S01' && index === 0;
                     const isHPLSeason3 = season.title === 'HPL Season 3';
+                    const isHPLSeason4 = season.title === 'HPL Season 4';
 
                     let imageSrc = `https://placehold.co/400x400.png?id=${season.year}-${index}`;
 
@@ -108,6 +109,8 @@ export default function AboutPage() {
                       imageSrc = '/s01/1.jpg';
                     } else if (isHPLSeason3) {
                       imageSrc = `/s01/${index + 1}.jpg`;
+                    } else if (isHPLSeason4) {
+                      imageSrc = `/s02/${index + 1}.jpg`;
                     }
 
                     return (
