@@ -79,7 +79,7 @@ export default function AboutPage() {
       </div>
 
       <div className="text-center mt-16">
-        <h2 className="text-3xl font-headline font-semibold mb-8">NYSH Cricket: A Season-by-Season Journey</h2>
+        <h2 className="text-3xl font-headline font-semibold mb-8">NYSH Cricket</h2>
         <div className="space-y-16">
           {seasons.map((season) => (
             <div key={season.year}>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               >
                 <CarouselContent>
                   {season.images.map((_, index) => (
-                    <CarouselItem key={index}>
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-1">
                         <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
                           <Image
