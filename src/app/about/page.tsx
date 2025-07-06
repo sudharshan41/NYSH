@@ -59,9 +59,9 @@ export default function AboutPage() {
       </div>
 
       <div className="text-center mt-16">
-        <h2 className="text-3xl font-headline font-semibold mb-4">Meet the Team</h2>
+        <h2 className="text-3xl font-headline font-semibold mb-4">NYSH Cricket </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {['Team Member 1', 'Team Member 2', 'Team Member 3', 'Team Member 4'].map((name) => (
+          {['Player 1', 'Player 2', 'Player 3', 'Player 4'].map((name) => (
             <div key={name} className="flex flex-col items-center">
               <Image
                 src="https://placehold.co/200x200.png"
@@ -69,10 +69,10 @@ export default function AboutPage() {
                 width={200}
                 height={200}
                 className="rounded-full mb-4 shadow-md"
-                data-ai-hint="person portrait"
+                data-ai-hint="cricket player"
               />
               <h3 className="text-lg font-semibold">{name}</h3>
-              <p className="text-sm text-primary">Role</p>
+              <p className="text-sm text-primary">Player</p>
             </div>
           ))}
         </div>

@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'NYSH',
-  description: 'A website for our community group.',
+  description: 'ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು',
   icons: {
     icon: '/logo.png',
   },
