@@ -19,7 +19,7 @@ const seasons = [
   },
   {
     year: '2022',
-    title: 'Season 2022',
+    title: 'Nethaji cup S01',
     images: Array(6).fill(0),
     hint: 'cricket celebration'
   },
@@ -102,7 +102,7 @@ export default function AboutPage() {
               >
                 <CarouselContent>
                   {season.images.map((_, index) => (
-                    <CarouselItem key={index}>
+                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                       <div className="p-1">
                         <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
                           <Image
