@@ -13,9 +13,12 @@ export default function Home() {
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
           Connecting our community, one event at a time. Explore what makes us special and get involved today.
         </p>
-        <div className="mt-10 flex items-center gap-4">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Button asChild size="lg">
             <Link href="/about">Learn More</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/gallery">Gallery</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link href="/contact">Get in Touch</Link>
