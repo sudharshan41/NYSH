@@ -5,16 +5,20 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 const seasons = [
   {
     year: '2024',
+    title: 'HPL Season 3',
+    subtitle: 'Champions',
     images: Array(5).fill(0),
     hint: 'cricket tournament'
   },
   {
     year: '2023',
+    title: 'Season 2023',
     images: Array(7).fill(0),
     hint: 'cricket practice'
   },
   {
     year: '2022',
+    title: 'Season 2022',
     images: Array(6).fill(0),
     hint: 'cricket celebration'
   },
@@ -83,17 +87,21 @@ export default function AboutPage() {
         <div className="space-y-16">
           {seasons.map((season) => (
             <div key={season.year}>
-              <h3 className="text-2xl font-headline font-semibold mb-6">{`Season ${season.year}`}</h3>
+              <div className="mb-6">
+                <h3 className="text-2xl font-headline font-semibold">{season.title}</h3>
+                {season.subtitle && (
+                  <p className="text-xl font-semibold text-accent">{season.subtitle}</p>
+                )}
+              </div>
               <Carousel
                 opts={{
                   align: "start",
-                  loop: true,
                 }}
                 className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto"
               >
                 <CarouselContent>
                   {season.images.map((_, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={index}>
                       <div className="p-1">
                         <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
                           <Image
