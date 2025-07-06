@@ -23,6 +23,12 @@ const seasons = [
     images: Array(6).fill(0),
     hint: 'cricket celebration'
   },
+  {
+    year: '2021',
+    title: 'A Year of Growth',
+    images: Array(5).fill(0),
+    hint: 'cricket team'
+  },
 ];
 
 
