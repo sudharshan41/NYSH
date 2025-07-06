@@ -26,7 +26,7 @@ const seasons = [
   {
     year: '2021',
     title: "Junior's Cup",
-    images: Array(5).fill(0),
+    images: Array(1).fill(0),
     hint: 'cricket team'
   },
 ];
@@ -94,16 +94,18 @@ export default function AboutPage() {
               <Carousel
                 opts={{
                   align: "start",
+                  loop: true,
                 }}
-                className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto"
+                className="w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
               >
                 <CarouselContent>
                   {season.images.map((_, index) => {
                     const isNethajiCupFirstImage = season.title === 'Nethaji cup S01' && index === 0;
                     const isHPLSeason3 = season.title === 'HPL Season 3';
                     const isHPLSeason4 = season.title === 'HPL Season 4';
+                    const isJuniorsCup = season.title === "Junior's Cup";
 
-                    let imageSrc = `https://placehold.co/400x400.png?id=${season.year}-${index}`;
+                    let imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
 
                     if (isNethajiCupFirstImage) {
                       imageSrc = '/s01/1.jpg';
@@ -111,10 +113,12 @@ export default function AboutPage() {
                       imageSrc = `/s01/${index + 1}.jpg`;
                     } else if (isHPLSeason4) {
                       imageSrc = `/s02/${index + 1}.jpg`;
+                    } else if (isJuniorsCup) {
+                      imageSrc = '/s02/jr.jpg';
                     }
 
                     return (
-                      <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                      <CarouselItem key={index} className="basis-full">
                         <div className="p-1">
                           <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
                             <Image
@@ -131,8 +135,8 @@ export default function AboutPage() {
                     );
                   })}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex left-4" />
-                <CarouselNext className="hidden md:flex right-4" />
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
               </Carousel>
             </div>
           ))}
