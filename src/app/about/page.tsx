@@ -93,7 +93,7 @@ export default function AboutPage() {
               >
                 <CarouselContent>
                   {season.images.map((_, index) => (
-                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <CarouselItem key={index}>
                       <div className="p-1">
                         <div className="aspect-square relative group overflow-hidden rounded-lg shadow-lg">
                           <Image
