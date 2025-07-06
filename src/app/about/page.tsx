@@ -44,17 +44,8 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
-        <div className="rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src="/grouppic.jpg"
-            alt="Community gathering"
-            width={600}
-            height={400}
-            className="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-        <div>
+      <div className="mb-16">
+        <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-headline font-semibold mb-4">Our History</h2>
           <p className="text-muted-foreground leading-relaxed">
             Founded in 2018, our journey began as a small group of friends with a shared passion. Over the years, we have grown into a vibrant organization. We cherish our history and the journey that has shaped us into the strong, supportive community we are today.
