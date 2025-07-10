@@ -23,12 +23,14 @@ const galleryData = {
   'Videos': [
     {
       thumbnail: 'https://placehold.co/400x400.png',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: '/videos/1.mp4',
+      type: 'local',
       hint: 'community event video'
     },
     {
       thumbnail: 'https://placehold.co/400x400.png',
       videoUrl: 'https://www.youtube.com/embed/o-YBDTqX_ZU',
+      type: 'youtube',
       hint: 'celebration video'
     }
   ],
@@ -36,29 +38,37 @@ const galleryData = {
 
 const years = ['2024', '2023', '2022', 'Previous Year', 'Videos'];
 
+type VideoItem = {
+  thumbnail: string;
+  videoUrl: string;
+  type: 'local' | 'youtube';
+  hint: string;
+};
+
+
 export default function GalleryPage() {
   const [selectedYear, setSelectedYear] = useState(years[0]);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<string | VideoItem | null>(null);
 
   const isVideoSection = selectedYear === 'Videos';
   const currentItems = galleryData[selectedYear as keyof typeof galleryData];
 
   const openLightbox = (index: number) => {
     if (isVideoSection) {
-      const item = currentItems[index] as { videoUrl: string };
-      setVideoUrl(item.videoUrl);
+      const item = currentItems[index] as VideoItem;
+      setSelectedItem(item);
     } else {
-      setVideoUrl(null);
       setSelectedImageIndex(index);
+      setSelectedItem(currentItems[index] as string);
     }
     setLightboxOpen(true);
   };
 
   const closeLightbox = () => {
     setLightboxOpen(false);
-    setVideoUrl(null);
+    setSelectedItem(null);
   };
 
   const showNextImage = (e: React.MouseEvent) => {
@@ -89,7 +99,7 @@ export default function GalleryPage() {
     if (isVideoSection) {
       return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {(currentItems as {thumbnail: string; hint: string}[]).map((item, index) => (
+        {(currentItems as VideoItem[]).map((item, index) => (
             <div 
               key={`${selectedYear}-${index}`} 
               className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer"
@@ -145,6 +155,10 @@ export default function GalleryPage() {
       </Carousel>
     );
   };
+  
+  const isVideoItem = (item: any): item is VideoItem => {
+    return item && typeof item === 'object' && 'videoUrl' in item;
+  };
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -187,7 +201,7 @@ export default function GalleryPage() {
                     <X className="w-6 h-6" />
                 </Button>
 
-                {!videoUrl && (
+                {!isVideoItem(selectedItem) && (
                   <>
                     <Button 
                         variant="ghost" 
@@ -209,15 +223,19 @@ export default function GalleryPage() {
                 )}
 
                 <div className="relative w-full max-w-[80vw] max-h-[90vh] aspect-video">
-                    {videoUrl ? (
-                      <iframe 
-                        src={videoUrl}
-                        title="YouTube video player"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className="w-full h-full"
-                      />
+                    {isVideoItem(selectedItem) ? (
+                      selectedItem.type === 'youtube' ? (
+                        <iframe 
+                          src={selectedItem.videoUrl}
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="w-full h-full"
+                        />
+                      ) : (
+                        <video src={selectedItem.videoUrl} controls autoPlay className="w-full h-full" />
+                      )
                     ) : (
                       <Image
                           src={getImageUrl(selectedYear, currentItems[selectedImageIndex], selectedImageIndex)}
