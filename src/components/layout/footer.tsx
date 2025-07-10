@@ -16,7 +16,7 @@ export function Footer() {
         {pathname === '/contact' && (
           <Button asChild size="sm" variant="outline">
             <Link href="https://github.com/sudharshan41/NYSH.git" target="_blank" rel="noopener noreferrer">
-              Contribute
+              <span className="italic">Contribute</span>
             </Link>
           </Button>
         )}
