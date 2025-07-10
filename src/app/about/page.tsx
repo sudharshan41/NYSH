@@ -125,20 +125,6 @@ export default function AboutPage() {
               </p>
             </CardContent>
           </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">Our Values</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li><strong>Inclusivity:</strong> We welcome everyone, regardless of background.</li>
-                <li><strong>Respect:</strong> We treat all members with dignity and kindness.</li>
-                <li><strong>Collaboration:</strong> We believe in the power of working together.</li>
-                <li><strong>Growth:</strong> We encourage personal and professional development.</li>
-              </ul>
-            </CardContent>
-          </Card>
         </div>
 
         <div className="text-center mt-16">
