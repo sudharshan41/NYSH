@@ -16,7 +16,7 @@ import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const galleryData = {
-  '2024': ['1.jpg', '2.jpg', '3.jpg', '4.1.jpg', '5.jpg'],
+  '2024': ['1.jpg', '2.jpg', '3.jpg', '4.1.jpg'],
   '2023': ['1.jpg', '2.jpg', '3.jpg'],
   '2022': ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
   '2021': Array(5).fill(0),
