@@ -18,7 +18,7 @@ const galleryData = {
   '2024': ['1.jpg', '2.jpg', '3.jpg', '4.1.jpg'],
   '2023': ['1.jpg', '2.jpg', '3.jpg'],
   '2022': ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
-  'Previous Year': ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
+  'Previous Year': ['1.jpg'],
   'Videos': [
     {
       thumbnail: 'https://placehold.co/400x400.png',
@@ -77,7 +77,7 @@ export default function GalleryPage() {
   const getImageUrl = (year: string, image: string | number, index: number) => {
     if (typeof image === 'string' && image.includes('.')) {
       if (year === 'Previous Year') {
-        return `/2021/${image}`;
+        return `/previousYear/${image}`;
       }
       return `/${year}/${image}`;
     }
