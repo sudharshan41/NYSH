@@ -14,7 +14,8 @@ export type ContactFormState = {
   status: "success" | "error" | "idle";
 };
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize resend only if the API key is available.
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function submitContactForm(
   prevState: ContactFormState,
@@ -27,7 +28,10 @@ export async function submitContactForm(
     message: formData.get("message"),
   });
 
+  // Always return success to the user, but handle validation internally.
   if (!validatedFields.success) {
+    // Log the validation error for debugging, but don't show a specific error to the user.
+    console.error("Contact form validation failed:", validatedFields.error.flatten().fieldErrors);
     return {
       message: "Thank you for your message! We will get back to you soon.",
       status: "success",
@@ -36,12 +40,10 @@ export async function submitContactForm(
 
   const { name, email, message } = validatedFields.data;
 
-  // We'll try to send the email, but we won't let the user know if it fails.
-  try {
-    if (!process.env.RESEND_API_KEY) {
-       console.error("Could not send email. The RESEND_API_KEY is not configured.");
-    } else {
-        const { error } = await resend.emails.send({
+  // Only attempt to send an email if resend has been initialized.
+  if (resend) {
+    try {
+      const { error } = await resend.emails.send({
         from: 'Community Hub <onboarding@resend.dev>',
         to: ['nethajiyuvasene@gmail.com'],
         subject: `New Contact Form Submission from ${name}`,
@@ -53,17 +55,21 @@ export async function submitContactForm(
             <p><strong>Message:</strong></p>
             <p>${message}</p>
         `
-        });
+      });
 
-        if (error) {
-            console.error("Resend error:", error);
-        }
+      if (error) {
+          console.error("Resend error:", error);
+      }
+    } catch (e) {
+      console.error("Failed to send email:", e);
     }
-  } catch (e) {
-    console.error("Failed to send email:", e);
+  } else {
+    console.log("RESEND_API_KEY is not configured. Skipping email send.");
+    // You can add further local development logic here, e.g., logging the form data.
+    console.log("Form data:", { name, email, message });
   }
 
-  // Always return a success message to the user
+  // Always return a success message to the user.
   return {
     message: "Thank you for your message! We will get back to you soon.",
     status: "success",

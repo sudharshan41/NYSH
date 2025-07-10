@@ -15,8 +15,8 @@ export function Footer() {
         </p>
         {pathname === '/contact' && (
           <Button asChild size="sm" variant="outline">
-            <Link href="https://sudharshan18.netlify.app/" target="_blank" rel="noopener noreferrer">
-              Connect with GBB
+            <Link href="https://github.com/sudharshan41/NYSH.git" target="_blank" rel="noopener noreferrer">
+              Contribute
             </Link>
           </Button>
         )}
