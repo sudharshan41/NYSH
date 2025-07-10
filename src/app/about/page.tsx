@@ -18,6 +18,12 @@ const seasons = [
     hint: 'cricket tournament'
   },
   {
+    year: '2022',
+    title: 'Nethaji cup S01',
+    images: Array(1).fill(0),
+    hint: 'cricket tournament'
+  },
+  {
     year: '2021',
     title: "Junior's Cup",
     images: Array(1).fill(0),
