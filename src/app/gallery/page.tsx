@@ -13,6 +13,7 @@ import {
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X, PlayCircle } from 'lucide-react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const galleryData = {
   '2024': ['1.jpg', '2.jpg', '3.jpg', '4.1.jpg'],
@@ -84,6 +85,67 @@ export default function GalleryPage() {
     return `https://placehold.co/400x400.png?id=${year}-${index}`;
   };
 
+  const renderContent = () => {
+    if (isVideoSection) {
+      return (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {(currentItems as {thumbnail: string; hint: string}[]).map((item, index) => (
+            <div 
+              key={`${selectedYear}-${index}`} 
+              className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer"
+              onClick={() => openLightbox(index)}
+            >
+              <Image
+                src={item.thumbnail}
+                alt={`Video thumbnail ${index + 1}`}
+                fill
+                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
+                data-ai-hint={item.hint}
+              />
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+                <PlayCircle className="w-16 h-16 text-white/80 transform transition-transform group-hover:scale-110" />
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    
+    return (
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-4xl mx-auto"
+      >
+        <CarouselContent>
+          {(currentItems as string[]).map((item, index) => {
+            const imageSrc = getImageUrl(selectedYear, item, index);
+            return (
+              <CarouselItem key={`${selectedYear}-${index}`} className="md:basis-1/2 lg:basis-1/3" onClick={() => openLightbox(index)}>
+                <div className="p-1">
+                  <div className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <Image
+                      src={imageSrc}
+                      alt={`Gallery image ${index + 1} from ${selectedYear}`}
+                      fill
+                      className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
+                      data-ai-hint="community event"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+                  </div>
+                </div>
+              </CarouselItem>
+            );
+          })}
+        </CarouselContent>
+        <CarouselPrevious className="left-4" />
+        <CarouselNext className="right-4" />
+      </Carousel>
+    );
+  };
+
   return (
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-12">
@@ -110,50 +172,7 @@ export default function GalleryPage() {
         </Select>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {currentItems.map((item, index) => {
-            if (isVideoSection) {
-              const video = item as { thumbnail: string; hint: string };
-              return (
-                <div 
-                  key={`${selectedYear}-${index}`} 
-                  className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                  onClick={() => openLightbox(index)}
-                >
-                  <Image
-                    src={video.thumbnail}
-                    alt={`Video thumbnail ${index + 1}`}
-                    fill
-                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
-                    data-ai-hint={video.hint}
-                  />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white/80 transform transition-transform group-hover:scale-110" />
-                  </div>
-                </div>
-              )
-            }
-            
-            const imageSrc = getImageUrl(selectedYear, item, index);
-            
-            return (
-              <div 
-                key={`${selectedYear}-${index}`} 
-                className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer"
-                onClick={() => openLightbox(index)}
-              >
-                <Image
-                  src={imageSrc}
-                  alt={`Gallery image ${index + 1} from ${selectedYear}`}
-                  fill
-                  className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
-                  data-ai-hint="community event"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
-              </div>
-            )
-          })}
-      </div>
+      {renderContent()}
 
       <Dialog open={lightboxOpen} onOpenChange={closeLightbox}>
         <DialogContent className="max-w-screen-xl w-full h-full sm:h-auto max-h-[90vh] bg-transparent border-0 p-0 shadow-none flex items-center justify-center">
@@ -214,5 +233,3 @@ export default function GalleryPage() {
     </div>
   );
 }
-
-    
