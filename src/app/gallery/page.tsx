@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/select";
 
 const galleryData = {
-  '2025': Array(1).fill(0),
   '2024': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '4.1.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg'],
   '2023': Array(6).fill(0),
   '2022': Array(8).fill(0),
@@ -58,8 +57,6 @@ export default function GalleryPage() {
             let imageSrc = `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
             if (selectedYear === '2024') {
               imageSrc = `/2024/${image}`;
-            } else if (selectedYear === '2025') {
-              imageSrc = `/2025/${index + 1}.jpg`;
             } else {
               // Fallback for other years that use numeric arrays
               imageSrc = `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
