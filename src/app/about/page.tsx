@@ -7,20 +7,20 @@ const seasons = [
     year: '2024',
     title: 'HPL Season 3',
     subtitle: 'Champions',
-    images: Array(3).fill(0),
+    images: ['1.jpg', '2.jpg', '3.jpg', '4.1.jpg'],
     hint: 'cricket tournament'
   },
   {
     year: '2023',
     title: 'HPL Season 4',
     subtitle: 'Champions',
-    images: Array(4).fill(0),
+    images: ['1.jpg', '2.jpg', '3.jpg'],
     hint: 'cricket tournament'
   },
   {
     year: '2022',
     title: 'Nethaji cup S01',
-    images: Array(6).fill(0),
+    images: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
     hint: 'cricket celebration'
   },
   {
@@ -47,11 +47,10 @@ export default function AboutPage() {
       <div className="mb-16">
         <div className="relative aspect-[2/1] w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
           <Image
-            src="https://placehold.co/1200x600.png"
+            src="/grouppic.jpg"
             alt="NYSH Community Group Photo"
             fill
             className="object-cover"
-            data-ai-hint="community group photo"
           />
         </div>
       </div>
@@ -111,20 +110,42 @@ export default function AboutPage() {
                 className="w-full max-w-sm sm:max-w-md md:max-w-lg mx-auto"
               >
                 <CarouselContent>
-                  {season.images.map((_, index) => {
+                  {season.images.map((image, index) => {
                     const isNethajiCupFirstImage = season.title === 'Nethaji cup S01' && index === 0;
                     const isHPLSeason3 = season.title === 'HPL Season 3';
                     const isHPLSeason4 = season.title === 'HPL Season 4';
                     const isJuniorsCup = season.title === "Junior's Cup";
 
-                    let imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
+                    let imageSrc: string;
+
+                    if (typeof image === 'string') {
+                      if (season.year === '2024') {
+                        imageSrc = `/2024/${image}`;
+                      } else if (season.year === '2023') {
+                        imageSrc = `/2023/${image}`;
+                      } else if (season.year === '2022') {
+                        imageSrc = `/2022/${image}`;
+                      } else {
+                        imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
+                      }
+                    } else {
+                      imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
+                    }
 
                     if (isNethajiCupFirstImage) {
                       imageSrc = '/s01/1.jpg';
                     } else if (isHPLSeason3) {
-                      imageSrc = `/s01/${index + 1}.jpg`;
+                       if (typeof image === 'string') {
+                         imageSrc = `/s01/${image}`;
+                       } else {
+                         imageSrc = `/s01/${index + 1}.jpg`;
+                       }
                     } else if (isHPLSeason4) {
-                      imageSrc = `/s02/${index + 1}.jpg`;
+                       if (typeof image === 'string') {
+                         imageSrc = `/s02/${image}`;
+                       } else {
+                        imageSrc = `/s02/${index + 1}.jpg`;
+                       }
                     } else if (isJuniorsCup) {
                       imageSrc = '/s02/jr.jpg';
                     }
