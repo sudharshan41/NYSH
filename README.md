@@ -1,6 +1,4 @@
-# Firebase Studio
+# ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು
 
-This is a NextJS starter in Firebase Studio.
+Contributors will appreciated 💀
 
-To get started, take a look at src/app/page.tsx.
-git remote add origin <repository_url>
