@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/select";
 
 const galleryData = {
+  '2025': Array(1).fill(0),
   '2024': Array(9).fill(0),
   '2023': Array(6).fill(0),
   '2022': Array(8).fill(0),
@@ -54,9 +55,12 @@ export default function GalleryPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {galleryData[selectedYear as keyof typeof galleryData].map((_, index) => {
-            const imageSrc = selectedYear === '2024'
-              ? `/2024/${index + 1}.jpg`
-              : `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
+            let imageSrc = `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
+            if (selectedYear === '2024') {
+              imageSrc = `/2024/${index + 1}.jpg`;
+            } else if (selectedYear === '2025') {
+              imageSrc = `/2025/${index + 1}.jpg`;
+            }
             
             return (
               <div key={`${selectedYear}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg shadow-lg">
