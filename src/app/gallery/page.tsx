@@ -18,7 +18,7 @@ import { cn } from '@/lib/utils';
 const galleryData = {
   '2024': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '4.1.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg'],
   '2023': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
-  '2022': Array(8).fill(0),
+  '2022': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'],
   '2021': Array(5).fill(0),
   '2020': Array(7).fill(0),
   '2019': Array(4).fill(0),
@@ -57,6 +57,9 @@ export default function GalleryPage() {
     // Fallback for other years that use numeric arrays or might have string paths in the future
     if (typeof image === 'string' && image.includes('.')) {
         if (year === '2023') {
+            return `/${year}/${image}`;
+        }
+        if (year === '2022') {
             return `/${year}/${image}`;
         }
         return `/${year}/${image}`;
