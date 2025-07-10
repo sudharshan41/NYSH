@@ -45,6 +45,18 @@ export default function AboutPage() {
       </div>
 
       <div className="mb-16">
+        <div className="relative aspect-[2/1] w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
+          <Image
+            src="https://placehold.co/1200x600.png"
+            alt="NYSH Community Group Photo"
+            fill
+            className="object-cover"
+            data-ai-hint="community group photo"
+          />
+        </div>
+      </div>
+
+      <div className="mb-16">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-headline font-semibold mb-4">Our History</h2>
           <p className="text-muted-foreground leading-relaxed">
