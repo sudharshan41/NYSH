@@ -20,7 +20,7 @@ const seasons = [
   {
     year: '2022',
     title: 'Nethaji cup S01',
-    images: Array(1).fill(0),
+    images: ['1.jpg'],
     hint: 'cricket tournament'
   },
   {
@@ -111,42 +111,25 @@ export default function AboutPage() {
               >
                 <CarouselContent>
                   {season.images.map((image, index) => {
-                    const isNethajiCupFirstImage = season.title === 'Nethaji cup S01' && index === 0;
-                    const isHPLSeason3 = season.title === 'HPL Season 3';
-                    const isHPLSeason4 = season.title === 'HPL Season 4';
                     const isJuniorsCup = season.title === "Junior's Cup";
 
                     let imageSrc: string;
 
                     if (typeof image === 'string') {
-                      if (season.year === '2024') {
-                        imageSrc = `/2024/${image}`;
-                      } else if (season.year === '2023') {
-                        imageSrc = `/2023/${image}`;
-                      } else if (season.year === '2022') {
-                        imageSrc = `/2022/${image}`;
+                      if (season.title === 'HPL Season 3') {
+                        imageSrc = `/s01/${image}`;
+                      } else if (season.title === 'HPL Season 4') {
+                        imageSrc = `/s02/${image}`;
+                      } else if (season.title === 'Nethaji cup S01') {
+                        imageSrc = `/s01/${image}`;
                       } else {
                         imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
                       }
                     } else {
-                      imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
+                       imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
                     }
-
-                    if (isNethajiCupFirstImage) {
-                      imageSrc = '/s01/1.jpg';
-                    } else if (isHPLSeason3) {
-                       if (typeof image === 'string') {
-                         imageSrc = `/s01/${image}`;
-                       } else {
-                         imageSrc = `/s01/${index + 1}.jpg`;
-                       }
-                    } else if (isHPLSeason4) {
-                       if (typeof image === 'string') {
-                         imageSrc = `/s02/${image}`;
-                       } else {
-                        imageSrc = `/s02/${index + 1}.jpg`;
-                       }
-                    } else if (isJuniorsCup) {
+                    
+                    if (isJuniorsCup) {
                       imageSrc = '/s02/jr.jpg';
                     }
 
