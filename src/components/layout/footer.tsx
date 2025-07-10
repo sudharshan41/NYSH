@@ -14,11 +14,16 @@ export function Footer() {
           &copy; 2025 Sudharshan | GBB Innovations | All Rights Reserved.
         </p>
         {pathname === '/contact' && (
-          <Button asChild size="sm" variant="outline">
-            <Link href="https://github.com/sudharshan41/NYSH.git" target="_blank" rel="noopener noreferrer">
-              <span className="italic">Contribute</span>
-            </Link>
-          </Button>
+          <div className="text-center">
+            <Button asChild size="sm" variant="outline">
+              <Link href="https://github.com/sudharshan41/NYSH.git" target="_blank" rel="noopener noreferrer">
+                <span className="italic">Contribute</span>
+              </Link>
+            </Button>
+            <p className="text-xs text-muted-foreground mt-2">
+              Contributors will be appreciated 💀
+            </p>
+          </div>
         )}
       </div>
     </footer>
