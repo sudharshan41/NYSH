@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const seasons = [
   {
@@ -178,6 +179,7 @@ export default function AboutPage() {
       
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-screen-xl w-full h-full sm:h-auto max-h-[90vh] bg-transparent border-0 p-0 shadow-none flex items-center justify-center">
+            <DialogTitle className="sr-only">Image Lightbox</DialogTitle>
             <div className="relative w-full h-full flex items-center justify-center">
                 <Button 
                     variant="ghost" 

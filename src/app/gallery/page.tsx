@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -114,6 +114,7 @@ export default function GalleryPage() {
 
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
         <DialogContent className="max-w-screen-xl w-full h-full sm:h-auto max-h-[90vh] bg-transparent border-0 p-0 shadow-none flex items-center justify-center">
+            <DialogTitle className="sr-only">Image Lightbox</DialogTitle>
             <div className="relative w-full h-full flex items-center justify-center">
                 <Button 
                     variant="ghost" 
