@@ -10,6 +10,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const galleryData = {
   '2024': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '4.1.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg'],
@@ -25,6 +29,40 @@ const years = Object.keys(galleryData).sort((a, b) => Number(b) - Number(a));
 
 export default function GalleryPage() {
   const [selectedYear, setSelectedYear] = useState(years[0]);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  const currentYearImages = galleryData[selectedYear as keyof typeof galleryData];
+
+  const openLightbox = (index: number) => {
+    setSelectedImageIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+  };
+
+  const showNextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % currentYearImages.length);
+  };
+
+  const showPrevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setSelectedImageIndex((prevIndex) => (prevIndex - 1 + currentYearImages.length) % currentYearImages.length);
+  };
+
+  const getImageUrl = (year: string, image: string | number, index: number) => {
+    if (year === '2024') {
+      return `/2024/${image}`;
+    }
+    // Fallback for other years that use numeric arrays or might have string paths in the future
+    if (typeof image === 'string' && image.includes('.')) {
+        return `/${year}/${image}`;
+    }
+    return `https://placehold.co/400x400.png?id=${year}-${index}`;
+  };
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -53,17 +91,15 @@ export default function GalleryPage() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {galleryData[selectedYear as keyof typeof galleryData].map((image, index) => {
-            let imageSrc = `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
-            if (selectedYear === '2024') {
-              imageSrc = `/2024/${image}`;
-            } else {
-              // Fallback for other years that use numeric arrays
-              imageSrc = `https://placehold.co/400x400.png?id=${selectedYear}-${index}`;
-            }
+        {currentYearImages.map((image, index) => {
+            const imageSrc = getImageUrl(selectedYear, image, index);
             
             return (
-              <div key={`${selectedYear}-${index}`} className="group relative aspect-square overflow-hidden rounded-lg shadow-lg">
+              <div 
+                key={`${selectedYear}-${index}`} 
+                className="group relative aspect-square overflow-hidden rounded-lg shadow-lg cursor-pointer"
+                onClick={() => openLightbox(index)}
+              >
                 <Image
                   src={imageSrc}
                   alt={`Gallery image ${index + 1} from ${selectedYear}`}
@@ -76,6 +112,49 @@ export default function GalleryPage() {
             )
           })}
       </div>
+
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-screen-xl w-full h-full sm:h-auto max-h-[90vh] bg-transparent border-0 p-0 shadow-none flex items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center">
+                <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className="absolute top-4 right-4 z-50 text-white bg-black/50 hover:bg-black/75 hover:text-white"
+                    onClick={closeLightbox}
+                >
+                    <X className="w-6 h-6" />
+                </Button>
+
+                <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-50 text-white bg-black/50 hover:bg-black/75 hover:text-white h-12 w-12 rounded-full"
+                    onClick={showPrevImage}
+                >
+                    <ChevronLeft className="w-8 h-8" />
+                </Button>
+
+                <div className="relative w-full max-w-[80vw] max-h-[90vh] aspect-video">
+                    <Image
+                        src={getImageUrl(selectedYear, currentYearImages[selectedImageIndex], selectedImageIndex)}
+                        alt={`Gallery image ${selectedImageIndex + 1} from ${selectedYear}`}
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+
+                <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-50 text-white bg-black/50 hover:bg-black/75 hover:text-white h-12 w-12 rounded-full"
+                    onClick={showNextImage}
+                >
+                    <ChevronRight className="w-8 h-8" />
+                </Button>
+            </div>
+        </DialogContent>
+      </Dialog>
+
     </div>
   );
 }
