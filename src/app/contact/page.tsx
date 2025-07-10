@@ -1,3 +1,4 @@
+
 import { Phone, Instagram, Mail } from 'lucide-react';
 import Image from 'next/image';
 import { ContactForm } from '@/components/contact-form';
@@ -56,7 +57,7 @@ export default function ContactPage() {
                     alt="Map showing office location in Holur"
                     width={800}
                     height={450}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 brightness-110"
                     data-ai-hint="map location"
                     />
                     <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
@@ -70,3 +71,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    

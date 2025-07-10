@@ -124,7 +124,7 @@ export default function GalleryPage() {
                     src={video.thumbnail}
                     alt={`Video thumbnail ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
                     data-ai-hint={video.hint}
                   />
                   <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors flex items-center justify-center">
@@ -146,7 +146,7 @@ export default function GalleryPage() {
                   src={imageSrc}
                   alt={`Gallery image ${index + 1} from ${selectedYear}`}
                   fill
-                  className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                  className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
                   data-ai-hint="community event"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
@@ -204,7 +204,7 @@ export default function GalleryPage() {
                           src={getImageUrl(selectedYear, currentItems[selectedImageIndex], selectedImageIndex)}
                           alt={`Gallery image ${selectedImageIndex + 1} from ${selectedYear}`}
                           fill
-                          className="object-contain"
+                          className="object-contain brightness-110"
                       />
                     )}
                 </div>
@@ -214,3 +214,5 @@ export default function GalleryPage() {
     </div>
   );
 }
+
+    

@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -13,7 +14,7 @@ export function CoinLogo() {
             alt="NYSH Logo"
             width={142}
             height={142}
-            className="rounded-full"
+            className="rounded-full brightness-110"
           />
         </div>
         <div className="coin-face coin-back">
@@ -22,10 +23,12 @@ export function CoinLogo() {
             alt="NYSH Logo"
             width={142}
             height={142}
-            className="rounded-full"
+            className="rounded-full brightness-110"
           />
         </div>
       </div>
     </div>
   );
 }
+
+    

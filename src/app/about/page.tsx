@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -100,7 +101,7 @@ export default function AboutPage() {
               src="/grouppic.jpg"
               alt="NYSH Community Group Photo"
               fill
-              className="object-cover"
+              className="object-cover brightness-110"
               data-ai-hint="community group photo"
             />
           </div>
@@ -158,7 +159,7 @@ export default function AboutPage() {
                                 src={imageSrc}
                                 alt={`Season ${season.year} Image ${index + 1}`}
                                 fill
-                                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-110 brightness-110"
                                 data-ai-hint={season.hint}
                               />
                               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors" />
@@ -205,7 +206,7 @@ export default function AboutPage() {
                         src={selectedSeasonImages[selectedImageIndex]}
                         alt={`Enlarged image ${selectedImageIndex + 1}`}
                         fill
-                        className="object-contain"
+                        className="object-contain brightness-110"
                     />
                   )}
                 </div>
@@ -224,3 +225,5 @@ export default function AboutPage() {
     </>
   );
 }
+
+    
