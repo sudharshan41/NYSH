@@ -29,6 +29,30 @@ const galleryData = {
     },
     {
       thumbnail: 'https://placehold.co/400x400.png',
+      videoUrl: '/videos/2.mp4',
+      type: 'local',
+      hint: 'community event video'
+    },
+    {
+      thumbnail: 'https://placehold.co/400x400.png',
+      videoUrl: '/videos/3.mp4',
+      type: 'local',
+      hint: 'community event video'
+    },
+    {
+      thumbnail: 'https://placehold.co/400x400.png',
+      videoUrl: '/videos/4.mp4',
+      type: 'local',
+      hint: 'community event video'
+    },
+    {
+      thumbnail: 'https://placehold.co/400x400.png',
+      videoUrl: '/videos/5.mp4',
+      type: 'local',
+      hint: 'community event video'
+    },
+    {
+      thumbnail: 'https://placehold.co/400x400.png',
       videoUrl: 'https://www.youtube.com/embed/o-YBDTqX_ZU',
       type: 'youtube',
       hint: 'celebration video'
