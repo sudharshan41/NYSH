@@ -20,7 +20,7 @@ const seasons = [
   {
     year: '2022',
     title: 'Nethaji cup S01',
-    images: ['1.jpg'],
+    images: ['1.jpg', '2.jpg', '3.jpg', '4.jpg'],
     hint: 'cricket tournament'
   },
   {
@@ -121,7 +121,7 @@ export default function AboutPage() {
                       } else if (season.title === 'HPL Season 4') {
                         imageSrc = `/s02/${image}`;
                       } else if (season.title === 'Nethaji cup S01') {
-                        imageSrc = `/s01/${image}`;
+                        imageSrc = `/nethaji cup/${image}`;
                       } else {
                         imageSrc = `https://placehold.co/600x600.png?id=${season.year}-${index}`;
                       }
