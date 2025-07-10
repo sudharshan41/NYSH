@@ -56,6 +56,9 @@ export default function GalleryPage() {
   const getImageUrl = (year: string, image: string | number, index: number) => {
     // Fallback for other years that use numeric arrays or might have string paths in the future
     if (typeof image === 'string' && image.includes('.')) {
+        if (year === '2023') {
+            return `/${year}/${image}`;
+        }
         return `/${year}/${image}`;
     }
     return `https://placehold.co/400x400.png?id=${year}-${index}`;
