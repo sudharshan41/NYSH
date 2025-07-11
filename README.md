@@ -7,7 +7,7 @@ A community group web application built using **Typescript**.
 
 ### 🧰 Built With
 
--> gemini and Genkit AI
+-> gemini API
 
 -> CSS / Tailwind CSS / Typescript
 
