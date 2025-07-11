@@ -16,7 +16,8 @@ import { ChevronLeft, ChevronRight, X, PlayCircle } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const galleryData = {
-  '2024': ['1.1.jpg', '2.jpg', '3.jpg', '4.jpg','5.jpg'],
+   '2024': ['1.1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
+
   '2023': ['1.jpg', '2.1.jpg', '3.jpg'],
   '2022': ['1.jpg', '2.jpg', '3.1.jpg', '4.jpg'],
   'Previous Year': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'],
