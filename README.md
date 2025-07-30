@@ -24,7 +24,7 @@ Follow these steps to run the project locally:
 ###  Clone the repository
 
 ```bash
-https://github.com/sudharshan41/nethajiyuvaseeneholur.git
+https://github.com/sudharshan41/NYSH.git
 ```
 
 ### Navigate to the project directory
