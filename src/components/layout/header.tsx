@@ -45,7 +45,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image
-            src="/logo.png"
+            src="/logo11.png"
             alt="NYSH Logo"
             width={32}
             height={32}

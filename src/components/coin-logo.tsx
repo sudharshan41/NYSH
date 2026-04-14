@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -10,7 +9,7 @@ export function CoinLogo() {
       <div className="coin">
         <div className="coin-face coin-front">
           <Image
-            src="/logo.png"
+            src="/logo11.png"
             alt="NYSH Logo"
             width={142}
             height={142}
@@ -19,7 +18,7 @@ export function CoinLogo() {
         </div>
         <div className="coin-face coin-back">
           <Image
-            src="/logo.png"
+            src="/logo11.png"
             alt="NYSH Logo"
             width={142}
             height={142}
@@ -30,5 +29,3 @@ export function CoinLogo() {
     </div>
   );
 }
-
-    

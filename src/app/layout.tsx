@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'NYSH',
   description: 'ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು',
   icons: {
-    icon: '/logo.png',
+    icon: '/logo11.png',
   },
 };
 

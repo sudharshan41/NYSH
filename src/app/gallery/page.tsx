@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from 'next/image';
@@ -29,13 +28,13 @@ const galleryData = {
       hint: 'community event video'
     },
     {
-      thumbnail: '/logo.png',
+      thumbnail: '/logo11.png',
       videoUrl: '/videos/3.mp4',
       type: 'local',
       hint: 'community event video'
     },
     {
-      thumbnail: '/logo.png',
+      thumbnail: '/logo11.png',
       videoUrl: '/videos/4.mp4',
       type: 'local',
       hint: 'community event video'
