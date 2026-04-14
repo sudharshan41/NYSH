@@ -41,19 +41,19 @@ const galleryData = {
       hint: 'community event'
     },
     {
-      thumbnail: '/logo11.png',
+      thumbnail: '/logo.png',
       videoUrl: '/videos/2.mp4',
       type: 'local',
       hint: 'community event'
     },
     {
-      thumbnail: '/logo11.png',
+      thumbnail: '/logo.png',
       videoUrl: '/videos/3.mp4',
       type: 'local',
       hint: 'community event'
     },
     {
-      thumbnail: '/logo11.png',
+      thumbnail: '/logo.png',
       videoUrl: '/videos/4.mp4',
       type: 'local',
       hint: 'community event'

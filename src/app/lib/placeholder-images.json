@@ -1,0 +1,21 @@
+
+{
+  "images": [
+    {
+      "id": "community-group",
+      "url": "https://picsum.photos/seed/nysh-group/1200/600",
+      "width": 1200,
+      "height": 600,
+      "alt": "NYSH Community Group",
+      "hint": "community group"
+    },
+    {
+      "id": "cricket-event",
+      "url": "https://picsum.photos/seed/cricket/800/800",
+      "width": 800,
+      "height": 800,
+      "alt": "Cricket Tournament",
+      "hint": "cricket tournament"
+    }
+  ]
+}
