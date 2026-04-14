@@ -37,6 +37,38 @@ Visit:
 http://localhost:9002
 ```
 
+## 📤 How to Push to GitHub
+
+To share your code on GitHub, follow these steps:
+
+1. **Create a new repository** on [GitHub](https://github.com/new). (Don't check any boxes for README, license, or gitignore).
+2. **Open your terminal** in the project root directory.
+3. **Initialize Git**:
+   ```bash
+   git init
+   ```
+4. **Add all files**:
+   ```bash
+   git add .
+   ```
+5. **Commit your changes**:
+   ```bash
+   git commit -m "Initial commit of NYSH website"
+   ```
+6. **Set branch to main**:
+   ```bash
+   git branch -M main
+   ```
+7. **Add your GitHub repository as the remote origin**:
+   (Replace `<YOUR_GITHUB_URL>` with your actual repo link)
+   ```bash
+   git remote add origin <YOUR_GITHUB_URL>
+   ```
+8. **Push the code**:
+   ```bash
+   git push -u origin main
+   ```
+
 ## 🛠️ Built With
 - **Next.js 15** (App Router)
 - **Genkit** (AI Integration)
