@@ -121,7 +121,8 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-headline font-semibold mb-4">Our History</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Founded in 2018, our journey began as a small group of friends with a shared passion. Over the years, we have grown into a vibrant organization. We cherish our history and the journey that has shaped us into the strong, supportive community we are today.
+              Founded in 2018, our journey began as a small group of friends with a shared passion. We are proud followers of Netaji Subhas Chandra Bose, inspired by his vision of patriotism, unity, and courage. Our community works to uphold his values by empowering youth, promoting social responsibility, and contributing to the betterment of society.
+              .
             </p>
           </div>
         </div>
@@ -133,7 +134,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Our mission is to foster a sense of belonging and collaboration among our members. We strive to create a positive and inclusive environment where everyone feels valued, supported, and empowered to contribute their unique talents and ideas.
+              Our mission is to uphold and promote the values of Netaji Subhas Chandra Bose by fostering patriotism, unity, discipline, and courage among individuals, especially the youth.
               </p>
             </CardContent>
           </Card>
