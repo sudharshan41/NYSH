@@ -44,7 +44,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2 group">
-          <div className="relative h-8 w-8 overflow-hidden rounded-full transition-transform duration-500 group-hover:rotate-[360deg]">
+          <div className="relative h-8 w-8 overflow-hidden rounded-full transition-all duration-700 ease-in-out group-hover:rotate-[360deg] group-hover:scale-125 shadow-sm group-hover:shadow-lg border border-transparent group-hover:border-primary/20">
             <Image
               src="/logo11.png"
               alt="NYSH Logo"

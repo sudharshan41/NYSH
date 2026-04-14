@@ -3,7 +3,7 @@
   height: 150px;
   perspective: 1000px;
   filter: drop-shadow(0 6px 15px rgba(0,0,0,0.2));
-  animation: float 6s ease-in-out infinite;
+  animation: float-pulse 6s ease-in-out infinite;
 }
 
 .coin {
@@ -11,7 +11,7 @@
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  animation: rotate-coin 12s infinite linear;
+  animation: rotate-coin-dynamic 12s infinite linear;
 }
 
 .coin-face {
@@ -66,21 +66,30 @@
     box-shadow: 0 0 20px hsla(var(--accent), 0.3);
 }
 
-@keyframes rotate-coin {
-  from {
-    transform: rotateY(0deg);
+@keyframes rotate-coin-dynamic {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
   }
-  to {
-    transform: rotateY(360deg);
+  25% {
+    transform: rotateY(90deg) rotateX(5deg);
+  }
+  50% {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+  75% {
+    transform: rotateY(270deg) rotateX(-5deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg);
   }
 }
 
-@keyframes float {
+@keyframes float-pulse {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-20px) scale(1.05);
   }
 }
 
