@@ -1,4 +1,3 @@
-
 # ನೇತಾಜಿ ಯುವ ಸೇನೆ, ಹೋಳೂರು 🙏
 
 ### Contributors will be appreciated 💀
@@ -32,10 +31,7 @@ npm run dev
 ```
 
 ### 5. 🌍 Open Your Browser
-Visit:
-```bash
-http://localhost:9002
-```
+Visit: `http://localhost:9002`
 
 ## 📤 How to Push to GitHub
 
