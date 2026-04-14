@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="border-t py-6 md:py-8">
       <div className="container flex flex-col items-center justify-center gap-4">
         <p className="text-center text-sm text-muted-foreground">
-          &copy; 2025 Sudharshan | GBB Innovations | All Rights Reserved.
+          &copy; 2026 NYSH | GBB Innovations | All Rights Reserved.
         </p>
         {pathname === '/contact' && (
           <div className="text-center">

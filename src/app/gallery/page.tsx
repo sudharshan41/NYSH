@@ -15,29 +15,28 @@ import { ChevronLeft, ChevronRight, X, PlayCircle } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const galleryData = {
-   '2024': ['1.1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
-
+  '2024': ['1.1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
   '2023': ['1.jpg', '2.1.jpg', '3.jpg'],
   '2022': ['1.jpg', '2.jpg', '3.1.jpg', '4.jpg'],
   'Previous Year': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'],
   'Videos': [
     {
-      thumbnail: '/logo.png',
+      thumbnail: '/logo11.png',
       videoUrl: '/videos/2.mp4',
       type: 'local',
-      hint: 'community event video'
+      hint: 'community event'
     },
     {
       thumbnail: '/logo11.png',
       videoUrl: '/videos/3.mp4',
       type: 'local',
-      hint: 'community event video'
+      hint: 'community event'
     },
     {
       thumbnail: '/logo11.png',
       videoUrl: '/videos/4.mp4',
       type: 'local',
-      hint: 'community event video'
+      hint: 'community event'
     }
   ],
 };
@@ -50,7 +49,6 @@ type VideoItem = {
   type: 'local' | 'youtube';
   hint: string;
 };
-
 
 export default function GalleryPage() {
   const [selectedYear, setSelectedYear] = useState(years[0]);
@@ -98,7 +96,9 @@ export default function GalleryPage() {
       }
       return `/${year}/${image}`;
     }
-    return `https://placehold.co/400x400.png?id=${year}-${index}`;
+    // Updated fallback to use picsum as per guidelines
+    const seed = `${year}-${index}`.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return `https://picsum.photos/seed/${seed}/800/800`;
   };
 
   const renderContent = () => {
@@ -178,7 +178,16 @@ export default function GalleryPage() {
       </div>
 
       <div className="flex justify-center mb-8">
-        <Select value={selectedYear} onValueChange={setSelectedYear}>
+        <Select 
+          value={selectedYear} 
+          onValueChange={(value) => {
+            if (value === 'Explore more') {
+              window.open('https://drive.google.com/drive/folders/19pF-VcMhJySaWfD9qnDXsO9PU_eCU-5b?usp=drive_link', '_blank');
+            } else {
+              setSelectedYear(value);
+            }
+          }}
+        >
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Select a year" />
           </SelectTrigger>
@@ -188,6 +197,9 @@ export default function GalleryPage() {
                 {year}
               </SelectItem>
             ))}
+            <SelectItem value="Explore more" className="text-primary font-bold">
+              Explore more...
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
