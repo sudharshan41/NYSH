@@ -35,9 +35,9 @@ Visit: `http://localhost:9002`
 
 ## 📤 How to Push to GitHub
 
-To share your code on GitHub, follow these steps:
+To share your code on a new GitHub repository, follow these steps:
 
-1. **Create a new repository** on [GitHub](https://github.com/new). (Don't check any boxes for README, license, or gitignore).
+1. **Create a new repository** on [GitHub](https://github.com/new). (Don't check any boxes for README, license, or gitignore as we already have them).
 2. **Open your terminal** in the project root directory.
 3. **Initialize Git**:
    ```bash
@@ -56,7 +56,7 @@ To share your code on GitHub, follow these steps:
    git branch -M main
    ```
 7. **Add your GitHub repository as the remote origin**:
-   (Replace `<YOUR_GITHUB_URL>` with your actual repo link)
+   (Replace `<YOUR_GITHUB_URL>` with your actual repo link, e.g., `https://github.com/username/repo-name.git`)
    ```bash
    git remote add origin <YOUR_GITHUB_URL>
    ```
