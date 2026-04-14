@@ -43,15 +43,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
-          <Image
-            src="/logo11.png"
-            alt="NYSH Logo"
-            width={32}
-            height={32}
-            className="h-8 w-8 rounded-full"
-          />
-          <span className="font-bold font-headline">NYSH</span>
+        <Link href="/" className="mr-6 flex items-center space-x-2 group">
+          <div className="relative h-8 w-8 overflow-hidden rounded-full transition-transform duration-500 group-hover:rotate-[360deg]">
+            <Image
+              src="/logo11.png"
+              alt="NYSH Logo"
+              width={32}
+              height={32}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <span className="font-bold font-headline text-xl tracking-tight transition-colors group-hover:text-primary">NYSH</span>
         </Link>
         <div className="hidden flex-1 items-center justify-end space-x-2 md:flex">
           <nav className="flex items-center space-x-2">
