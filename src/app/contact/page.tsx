@@ -9,10 +9,10 @@ export default function ContactPage() {
     <div className="container mx-auto px-4 py-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-bold font-headline tracking-tight">
-          Get In Touch
+          Join With Us
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          We'd love to hear from you! Send us a message or connect with us on social media.
+          We'd love to have you in our community! Send us a message or connect with us on social media to get involved.
         </p>
       </div>
 
@@ -71,5 +71,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    

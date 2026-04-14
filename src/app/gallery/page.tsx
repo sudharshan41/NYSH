@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -15,12 +16,30 @@ import { ChevronLeft, ChevronRight, X, PlayCircle } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const galleryData = {
-  '2025': ['1.jpg', '2.jpg', '3.jpg'],
+  '2025': ['11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', 'grouppic.jpeg'],
   '2024': ['1.1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
   '2023': ['1.jpg', '2.1.jpg', '3.jpg'],
   '2022': ['1.jpg', '2.jpg', '3.1.jpg', '4.jpg'],
   'Previous Year': ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'],
   'Videos': [
+    {
+      thumbnail: '/image.png',
+      videoUrl: '/videos/6.mp4',
+      type: 'local',
+      hint: 'community event'
+    },
+    {
+      thumbnail: '/image copy.png',
+      videoUrl: '/videos/7.mp4',
+      type: 'local',
+      hint: 'community event'
+    },
+    {
+      thumbnail: '/image copy 2.png',
+      videoUrl: '/videos/8.mp4',
+      type: 'local',
+      hint: 'community event'
+    },
     {
       thumbnail: '/logo11.png',
       videoUrl: '/videos/2.mp4',
@@ -92,12 +111,16 @@ export default function GalleryPage() {
 
   const getImageUrl = (year: string, image: string | number, index: number) => {
     if (typeof image === 'string' && image.includes('.')) {
+      // Handle grouppic which is in public root
+      if (image === 'grouppic.jpeg') {
+        return '/grouppic.jpeg';
+      }
       if (year === 'Previous Year') {
         return `/previousYear/${image}`;
       }
+      // Assuming 2025 images are in public/2025/
       return `/${year}/${image}`;
     }
-    // Updated fallback to use picsum as per guidelines
     const seed = `${year}-${index}`.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
     return `https://picsum.photos/seed/${seed}/800/800`;
   };
