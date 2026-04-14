@@ -98,7 +98,7 @@ export default function AboutPage() {
         <div className="mb-16">
           <div className="relative aspect-[2/1] w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-2xl">
             <Image
-              src="/grouppic.jpg"
+              src="/grouppic.jpeg"
               alt="NYSH Community Group Photo"
               fill
               className="object-cover brightness-110"
@@ -225,5 +225,3 @@ export default function AboutPage() {
     </>
   );
 }
-
-    
