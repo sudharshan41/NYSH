@@ -12,6 +12,13 @@ import { cn } from '@/lib/utils';
 
 const seasons = [
   {
+    year: '2025',
+    title: 'HPL Season 6',
+    subtitle: 'Latest Season',
+    images: ['1.jpg', '2.jpg', '3.jpg'],
+    hint: 'cricket tournament'
+  },
+  {
     year: '2024',
     title: 'HPL Season 3',
     subtitle: 'Champions',
@@ -48,6 +55,9 @@ export default function AboutPage() {
   const getFullImagePath = (season: typeof seasons[number], image: string): string => {
     if (image.startsWith('/')) {
       return image; // Already a full path (like for Junior's Cup)
+    }
+    if (season.title === 'HPL Season 6') {
+      return `/s06/${image}`;
     }
     if (season.title === 'HPL Season 3') {
       return `/s01/${image}`;
@@ -133,7 +143,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-headline font-semibold mb-8">NYSH Cricket</h2>
           <div className="space-y-16">
             {seasons.map((season) => (
-              <div key={season.year}>
+              <div key={season.year + season.title}>
                 <div className="mb-6">
                   <h3 className="text-2xl font-headline font-semibold">{season.title}</h3>
                   {season.subtitle && (
