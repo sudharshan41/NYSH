@@ -77,11 +77,11 @@
 
 @keyframes ball-pitch {
   0%, 100% {
-    transform: translateY(0) scaleX(1.1) scaleY(0.9);
+    transform: translateY(0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
   50% {
-    transform: translateY(-60px) scaleX(0.9) scaleY(1.1);
+    transform: translateY(-60px);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
 }
