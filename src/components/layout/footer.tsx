@@ -21,6 +21,7 @@ export function Footer() {
               </Link>
             </Button>
             <p className="text-xs text-muted-foreground mt-2">
+              version 1.1.3  <br />
               Contributors will be appreciated 💀
             </p>
           </div>

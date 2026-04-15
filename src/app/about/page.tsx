@@ -14,7 +14,7 @@ const seasons = [
   {
     year: '2025',
     title: 'HPL Season 6',
-    subtitle: 'Latest Season',
+    subtitle: 'Champions',
     images: ['1.jpg', '2.jpg', '3.jpg'],
     hint: 'cricket tournament'
   },
@@ -38,12 +38,12 @@ const seasons = [
     images: ['1.jpg', '2.jpg'],
     hint: 'cricket tournament'
   },
-  {
-    year: '2021',
-    title: "Junior's Cup",
-    images: ['/s02/jr.jpg'], // Simplified to a direct path
-    hint: 'cricket team'
-  },
+  // {
+  //   year: '2021',
+  //   title: "Junior's Cup",
+  //   images: ['jr.jpg'],
+  //   hint: 'cricket team'
+  // },
 ];
 
 
@@ -65,6 +65,9 @@ export default function AboutPage() {
     if (season.title === 'HPL Season 4') {
       return `/s02/${image}`;
     }
+    // if (season.title === "Junior's Cup") {
+    //   return `/s02/${image}`;
+    // }
     if (season.title === 'Nethaji cup S01') {
       return `/nethaji cup/${image}`;
     }
